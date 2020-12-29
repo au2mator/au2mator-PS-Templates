@@ -23,6 +23,6 @@ This is a PowerShell Script Template to use with au2mator - Self Service Portal.
 
 Feel free to add more Features and find/fix Bugs
 
-www.au2mator.com
+<a href="https://au2mator.com/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=Readme" target="_blank">www.au2mator.com</a>
 
 # Other Ressources
