@@ -226,7 +226,7 @@ function Get-UserInput ($RequestID) {
     FROM            dbo.Requests AS R INNER JOIN
                              dbo.RunbookParameterMappings AS RPM ON R.ServiceId = RPM.ServiceId INNER JOIN
                              dbo.RequestParameters AS RP ON RPM.ParameterName = RP.[Key] AND R.ID = RP.RequestId
-    where RP.RequestId = '$RequestID' order by [Order]"
+    where RP.RequestId = '$RequestID' and rpm.IsDeleted = '0' order by [Order]"
 
     $html = "<table><tr><td><b>Question</b></td><td><b>Answer</b></td></tr>"
     $html = "<table>"
@@ -482,7 +482,7 @@ foreach ($Module in $Modules) {
 
             Install-Module $Module -Force -Confirm:$false
             Write-au2matorLog -Type INFO -Text "Module was installed the simple way:  $Module"
-            Write-au2matorLog -Type INFO -Text "Import Module:  $Module"
+            
         }
         catch {
             Write-au2matorLog -Type INFO -Text "Module is not installed, try the advanced way:  $Module"
@@ -491,7 +491,7 @@ foreach ($Module in $Modules) {
                 Install-PackageProvider -Name NuGet  -MinimumVersion 2.8.5.201 -Force
                 Install-Module $Module -Force -Confirm:$false
                 Write-au2matorLog -Type INFO -Text "Module was installed the advanced way:  $Module"
-                Write-au2matorLog -Type INFO -Text "Import Module:  $Module"
+                
             }
             catch {
                 Write-au2matorLog -Type ERROR -Text "could not install module:  $Module"
