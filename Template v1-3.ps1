@@ -99,7 +99,7 @@ if ($SMTPCredential_method -eq "Manual") {
 
 #endregion Variables
 
-#region CustomVaribles
+#region CustomVariables
 <#$PSOnlineCredential_method = "Stored" #Stored, Manual
 $PSOnlineCredential_File = "PSOnlineCreds.xml"
 $PSOnlineUser = ""
@@ -117,7 +117,7 @@ if ($PSOnlineCredential_method -eq "Manual") {
 $TempBackupStorage = "C:\_SCOworkingDir\TFS\PS-Services\M365 - Backup MS Teams Chat History" #Path to store Export File
 #>
 
-#endregion CustomVaribles
+#endregion CustomVariables
 
 
 
@@ -517,6 +517,7 @@ try {
 
     $au2matorReturn = "Automation was successfull"
     $AdditionalHTML = "Automation was successfull
+    <br>
         "
     $Status = "COMPLETED"
 }
@@ -527,8 +528,10 @@ catch {
     Write-au2matorLog -Type ERROR -Text "Error on Automation"
     Write-au2matorLog -Type ERROR -Text $Error
 
-    $au2matorReturn = "Failed Automation"
+    $au2matorReturn = "Failed Automation, Error: $Error"
     $AdditionalHTML = "Failed Automation
+    <br>
+    Error: $Error
         "
     $Status = "ERROR"
 }
