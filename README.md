@@ -7,7 +7,7 @@ au2mator - Self Service Portal is providing a Frontend to trigger your Microsoft
 - <a href="https://www.au2mator.com/Powershell/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=Readme" target="_blank">Powershell</a>
 - System Center SMA
 
-This is a PowerShell Script Template to use with au2mator - Self Service Portal.
+Here you can find some PowerShell Script Templates to use with au2mator - Self Service Portal.
 
 
 
