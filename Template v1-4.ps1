@@ -659,6 +659,7 @@ try {
             Write-au2matorLog -Type INFO -Text "Automation was successfull"
 
             $au2matorReturn = "Automation was successfull"
+            $TeamsReturn= "Automation was successfull" #No Special Characters allowed
             $AdditionalHTML = "Automation was successfull
             <br>
                 "
@@ -670,6 +671,7 @@ try {
             Write-au2matorLog -Type ERROR -Text $Error
         
             $au2matorReturn = "Failed Automation, Error: $Error"
+            $TeamsReturn= "Failed Automation" #No Special Characters allowed
             $AdditionalHTML = "Failed Automation
             <br>
             Error: $Error
@@ -682,6 +684,7 @@ try {
         Write-au2matorLog -Type ERROR -Text $Error
     
         $au2matorReturn = "Failed Automation, Error: $Error"
+        $TeamsReturn= "Failed Automation" #No Special Characters allowed
         $AdditionalHTML = "Failed Automation
         <br>
         Error: $Error
@@ -694,6 +697,7 @@ catch {
     Write-au2matorLog -Type ERROR -Text $Error
 
     $au2matorReturn = "Failed Automation, Error: $Error"
+    $TeamsReturn= "Failed Automation" #No Special Characters allowed
     $AdditionalHTML = "Failed Automation
     <br>
     Error: $Error
@@ -728,12 +732,12 @@ if ($SendMailToTargetUser) {
 
 if ($SendTeamsCardToInitiatedByUser) {
     Write-au2matorLog -Type INFO -Text "Send Teams Card to InitiatedBy"
-    Send-TeamsCard  -RequestID $RequestId -Recipient $($UserInput.MailInitiatedBy) -RequestStatus $Status -ServiceName $Service -au2matorReturn $au2matorReturn
+    Send-TeamsCard  -RequestID $RequestId -Recipient $($UserInput.MailInitiatedBy) -RequestStatus $Status -ServiceName $Service -au2matorReturn $TeamsReturn
 }
 
 if ($SendTeamsCardToTargetUser) {
     Write-au2matorLog -Type INFO -Text "Send Teams Card to Target User"
-    Send-TeamsCard  -RequestID $RequestId -Recipient $($UserInput.MailTarget) -RequestStatus $Status -ServiceName $Service -au2matorReturn $au2matorReturn
+    Send-TeamsCard  -RequestID $RequestId -Recipient $($UserInput.MailTarget) -RequestStatus $Status -ServiceName $Service -au2matorReturn $TeamsReturn
 }
 
 
