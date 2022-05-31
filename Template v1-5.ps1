@@ -8,7 +8,7 @@
 # v 1.1 Added Stored Credentials, New Code Template
 # v 1.3 Some Design Changes, removed some varibales, Code cleaning
 # v 1.4 Added Teams Card
-# v 1.5 Mail with German Umlaute, New Structure, better Comments, renamed GrapHApi Var to Teams, added GRAPH API Mail Method
+# v 1.5 Mail with German Umlaute, New Structure, better Comments, renamed GrapHApi Variable to Teams, added GRAPH API Mail Method
 # 
 #
 # Init Release: 03.02.2020
@@ -479,22 +479,22 @@ Function Send-ServiceMail ($HTMLBody, $ServiceName, $Recipient, $RequestID, $Req
 
                 if ($EnableSSLforSMTP) {
                     Write-au2matorLog -Type INFO -Text "Run SMTP with Authentication and SSL"
-                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Credential $SMTPcredential -UseSsl -Port $SMTPPort
+                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Credential $SMTPcredential -UseSsl -Port $SMTPPort -Encoding ([System.Text.Encoding]::UTF8)
                 }
                 else {
                     Write-au2matorLog -Type INFO -Text "Run SMTP with Authentication and no SSL"
-                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Credential $SMTPcredential -Port $SMTPPort
+                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Credential $SMTPcredential -Port $SMTPPort -Encoding ([System.Text.Encoding]::UTF8)
                 }
             }
             else {
 
                 if ($EnableSSLforSMTP) {
                     Write-au2matorLog -Type INFO -Text "Run SMTP without Authentication and SSL"
-                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -UseSsl -Port $SMTPPort
+                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -UseSsl -Port $SMTPPort -Encoding ([System.Text.Encoding]::UTF8)
                 }
                 else {
                     Write-au2matorLog -Type INFO -Text "Run SMTP without Authentication and no SSL"
-                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Port $SMTPPort
+                    Send-MailMessage -SmtpServer $SMTPServer -To $Recipient -From $SMTPSender -Subject $f_Subject -Body $HTMLBody -BodyAsHtml -Priority high -Port $SMTPPort -Encoding ([System.Text.Encoding]::UTF8)
                 }
             }
         }
@@ -540,7 +540,7 @@ $BodyJsonsend = @"
 "@
 #Write-au2matorLog -Type INFO -Text "Body: $BodyJsonsend"
 
-Invoke-RestMethod -Method POST -Uri $URLsend -Headers $headers -Body $BodyJsonsend
+Invoke-RestMethod -Method POST -Uri $URLsend -Headers $headers -Body $BodyJsonsend -ContentType "application/json; charset=utf-8"
 Write-au2matorLog -Type INFO -Text "Mail sent with GRAPH API"
 
         }
