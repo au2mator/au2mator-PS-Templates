@@ -327,7 +327,7 @@ Function Get-MailContent ($RequestID, $RequestTitle, $EndDate, $TargetUserId, $I
     }
 
     $f_RequestStatus = $Status
-    $f_RequestLink = "$PortalURL/requeststatus?id=$RequestID"
+    $f_RequestLink = "$PortalURL/Requests/SingleStatus?id$RequestID"
     $f_HTMLINFO = $AdditionalHTML
     $f_InputHTML = $InputHTML
 
