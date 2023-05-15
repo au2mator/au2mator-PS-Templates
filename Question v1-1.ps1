@@ -31,7 +31,6 @@ $jsondata = $au2matorhook | ConvertFrom-Json
 
 #Environment
 [string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://au2mator.com/documentation/powershell-credentials/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
-
 [string]$LogPath = "C:\_SCOworkingDir\TFS\PS-Services\AZURE - Create Azure Resource Group"
 [string]$LogfileName = "Question-GetResourceRoles"
 
@@ -114,6 +113,8 @@ try {
         Write-au2matorLog -Type ERROR -Text "Error to Try2"
         Write-au2matorLog -Type ERROR -Text $Error
     
+
+
         $au2matorReturn = "Error to Try2, Error: $Error"
         $TeamsReturn = "Error to Try2" #No Special Characters allowed
         $AdditionalHTML = "Error to Try2
