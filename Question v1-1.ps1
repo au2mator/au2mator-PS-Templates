@@ -11,7 +11,7 @@
 # Last Update: 31.05.2022
 # Code Template V 1.1
 #
-# URL: https://au2mator.com/documentation/configure-powershell-question-type/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+# URL: https://click.au2mator.com/QuestionPS/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
 # Github: https://github.com/au2mator/au2mator-PS-Templates
 #
 # PreReq: au2mator 4.5 or higher required
@@ -30,7 +30,7 @@ $jsondata = $au2matorhook | ConvertFrom-Json
 #region Variables
 
 #Environment
-[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://au2mator.com/documentation/powershell-credentials/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://click.au2mator.com/PSCreds/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
 [string]$LogPath = "C:\_SCOworkingDir\TFS\PS-Services\AZURE - Create Azure Resource Group"
 [string]$LogfileName = "Question-GetResourceRoles"
 

@@ -45,7 +45,7 @@ param (
 [string]$LogPath = "C:\_SCOworkingDir\TFS\PS-Services\au2mator - Approval"
 [string]$LogfileName = "Approval"
 
-[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://au2mator.com/documentation/powershell-credentials/
+[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://click.au2mator.com/PSCreds/
 
 $Modules = @()
 
@@ -67,7 +67,7 @@ $SMTPSender = "SelfService@au2mator.com"
 $SMTPPort="587"
 
 # Stored Credentials
-# See: https://au2mator.com/documentation/powershell-credentials/
+# See: https://click.au2mator.com/PSCreds/
 $SMTPCredential_method = "Stored" #Stored, Manual
 $SMTPcredential_File = "SMTPCreds.xml"
 $SMTPUser = ""

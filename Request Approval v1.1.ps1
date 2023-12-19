@@ -11,7 +11,7 @@
 # Last Update: 03.05.2023
 # Code Template V 1.1
 #
-# URL: https://au2mator.com/documentation/use-powershell-with-au2mator/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+# URL: https://click.au2mator.com/StartWithPowerShell/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
 # Github: https://github.com/au2mator/au2mator-PS-Templates
 #
 # PreReq: Make sure ActiveDirectory PowerShell is able to install and run
@@ -50,7 +50,7 @@ param (
 ## Environment
 [string]$LogPath = "C:\_SCOworkingDir\TFS\PS-Services\au2mator - PS Template"
 [string]$LogfileName = "Approval"
-[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://au2mator.com/documentation/powershell-credentials/
+[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://click.au2mator.com/PSCreds/
 
 
 ## au2mator Settings
@@ -74,7 +74,7 @@ $MailMethod = "GRAPHAPI" #SMTP, GRAPHAPI
     $SMTPPort = "587"
 
     ###Stored Credentials
-    ###See: https://au2mator.com/documentation/powershell-credentials/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+    ###See: https://click.au2mator.com/PSCreds/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
     $SMTPCredential_method = "Stored" #Stored, Manual
     $SMTPcredential_File = "SMTPCreds.xml"
     $SMTPUser = ""
@@ -85,7 +85,7 @@ $MailMethod = "GRAPHAPI" #SMTP, GRAPHAPI
     ### GRAPH API Mail Settings
     $saveToSentItems = "true"
     ###Stored Credentials
-    ###See: https://au2mator.com/documentation/powershell-credentials/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+    ###See: https://click.au2mator.com/PSCreds/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
     $AzureGraphMailCred_method = "Stored" #Stored, Manual
     $AzureGraphMailCred_File = "AzureGraphMailCreds.xml"
 
