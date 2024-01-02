@@ -106,7 +106,26 @@ try {
     try {
         Write-au2matorLog -Type INFO -Text "Try2"
 
-        $Return=""
+        #Here we can decide what we want to return to au2mator
+        #an Array or a String
+
+        #region Array
+        $AllUsers = Get-ADUser -Filter * -properties userprincipalname, Name, Company
+        $Return = @()
+        foreach ($user in $AllUsers) {
+            $TempPSObject = New-Object -TypeName PSObject
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name UPN -Value $User.userprincipalname
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name Name -Value $User.Name
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name Company -Value $User.Company
+            $Return += $TempPSObject
+        }
+        #endregion Array
+
+
+        #region String
+        [String]$String = "This is a String"
+        $Return = $String
+        #endregion String
         
     }
     catch {
