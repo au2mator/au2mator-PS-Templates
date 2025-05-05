@@ -14,7 +14,7 @@
 # Last Update: 08.08.2021
 # Code Template V 1.4
 #
-# URL: https://au2mator.com/documentation/use-powershell-with-au2mator/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS2
+# URL: https://click.au2mator.com/StartWithPowerShell/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS2
 # Github: https://github.com/au2mator/au2mator-PS-Templates
 #
 # PreReq: Make sure ActiveDirectory PowerShell is able to install and run
