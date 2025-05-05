@@ -11,7 +11,7 @@
 # Last Update: 31.05.2022
 # Code Template V 1.1
 #
-# URL: https://au2mator.com/documentation/configure-powershell-question-type/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
+# URL: https://click.au2mator.com/QuestionPS/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
 # Github: https://github.com/au2mator/au2mator-PS-Templates
 #
 # PreReq: au2mator 4.5 or higher required
@@ -30,8 +30,7 @@ $jsondata = $au2matorhook | ConvertFrom-Json
 #region Variables
 
 #Environment
-[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://au2mator.com/documentation/powershell-credentials/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
-
+[string]$CredentialStorePath = "C:\_SCOworkingDir\TFS\PS-Services\CredentialStore" #see for details: https://click.au2mator.com/PSCreds/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=PS1
 [string]$LogPath = "C:\_SCOworkingDir\TFS\PS-Services\AZURE - Create Azure Resource Group"
 [string]$LogfileName = "Question-GetResourceRoles"
 
@@ -107,13 +106,34 @@ try {
     try {
         Write-au2matorLog -Type INFO -Text "Try2"
 
-        $Return=""
+        #Here we can decide what we want to return to au2mator
+        #an Array or a String
+
+        #region Array
+        $AllUsers = Get-ADUser -Filter * -properties userprincipalname, Name, Company
+        $Return = @()
+        foreach ($user in $AllUsers) {
+            $TempPSObject = New-Object -TypeName PSObject
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name UPN -Value $User.userprincipalname
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name Name -Value $User.Name
+            $TempPSObject | Add-Member -MemberType NoteProperty -Name Company -Value $User.Company
+            $Return += $TempPSObject
+        }
+        #endregion Array
+
+
+        #region String
+        [String]$String = "This is a String"
+        $Return = $String
+        #endregion String
         
     }
     catch {
         Write-au2matorLog -Type ERROR -Text "Error to Try2"
         Write-au2matorLog -Type ERROR -Text $Error
     
+
+
         $au2matorReturn = "Error to Try2, Error: $Error"
         $TeamsReturn = "Error to Try2" #No Special Characters allowed
         $AdditionalHTML = "Error to Try2
