@@ -5,7 +5,6 @@ The au2mator Self-Service Portal offers a user-friendly interface for initiating
 - <a href="https://au2mator.com/scorch-automation/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=Readme" target="_blank">System Center Orchestrator</a>
 - <a href="https://au2mator.com/azure-automation-self-service/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=Readme" target="_blank">Azure Automation</a>
 - <a href="https://au2mator.com/powershell-automation-self-service/?utm_source=github&utm_medium=social&utm_campaign=PS_Template&utm_content=Readme" target="_blank">Powershell</a>
-- System Center SMA
 
 Here you can find some PowerShell Script Templates to use with au2mator Self-Service Portal.
 
