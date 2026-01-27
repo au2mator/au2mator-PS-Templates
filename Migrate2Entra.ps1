@@ -98,7 +98,7 @@ ConnectToDB -servername $DBServer -database $Database
 
 #Array of tables and columns to migrate
 $TablesToMigrate = @(
-    @{TableName = "Requests"; Columns = @("TargetUserId", "InitiatedBy", "ApprovedBy", "CreatedBy") },
+    @{TableName = "Requests"; Columns = @("TargetUserId", "InitiatedBy", "ApprovedBy", "CreatedBy","ModifiedBy") },
     @{TableName = "Actors"; Columns = @("CreatedBy", "ModifiedBy", "UserID") },
     @{TableName = "Announcements"; Columns = @("CreatedBy", "ModifiedBy") },
     @{TableName = "ApiKeys"; Columns = @("CreatedBy", "ModifiedBy") },
