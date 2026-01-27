@@ -40,7 +40,7 @@ $NewApp_body = @{
                 )
                 essential            = "false"
                 name                 = "upn"
-                source               = "null"
+                source               = $null
             }
         )
         idToken     = @()
