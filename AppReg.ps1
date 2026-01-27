@@ -90,6 +90,10 @@ $Permission_body = @{
                     type = "Role"
                 },
                 @{
+                    id   = "14dad69e-099b-42c9-810b-d002981feec1"
+                    type = "Scope"
+                },
+                @{
                     id   = "5b567255-7703-4780-807c-7be8301ae99b"
                     type = "Role"
                 },
