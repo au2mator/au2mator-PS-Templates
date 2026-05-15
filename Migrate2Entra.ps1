@@ -1,4 +1,4 @@
-$DBServer = "avmsrv002"
+﻿$DBServer = "avmsrv002"
 $Database = "BETATEST_PROD_DEMO"
 
 $Override = $false #See line 128 when enabled
